@@ -28,11 +28,23 @@ html {
   src: url("/fonts/dmsans-2.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/font-1.ttf") format("truetype");
+}
+
 @theme {
   --color-primary: #fefeff;
-  --font-dmsans-regular: "Dmsans-regular";
+  --color-button-hover: #fe832b;
+  --color-skill-heading: #211a14;
+  --color-skill-bg: #f6f7f6;
+  --color-heading: #1f1f1f;
+  --font-dmsans: "Dmsans-regular";
   --font-dmsans-light: "Dmsans-light";
   --font-dmsans-semiBold: "Dmsans-semiBold";
+  --font-inter: "Inter";
   --text-nav: 0.875rem;
-  --text-button:0.9375rem;
+  --text-button: 0.9375rem;
+  --text-skill: 1.25rem;
+  --text-heading-lg: 4.125rem;
 }
