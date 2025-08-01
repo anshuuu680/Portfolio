@@ -12,6 +12,9 @@ const skills = [
   { text: "TypeScript", path: "/typescript.svg" },
   { text: "React", path: "/react.svg" },
   { text: "Node.js", path: "/node.svg" },
+  { text: "Java", path: "/java.svg" },
+  { text: "Github", path: "/github.svg" },
+  { text: "docker", path: "/docker.svg" },
 ];
 
 function CustomScroller({ direction = "normal" }: CustomScrollerProps) {
@@ -19,20 +22,21 @@ function CustomScroller({ direction = "normal" }: CustomScrollerProps) {
   const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <div className="w-full mx-auto relative overflow-hidden py-4 bg-[#fefeff]">
-      {/* Left smooth blur */}
-      <div className="pointer-events-none absolute top-0 left-0 h-full w-40 z-10">
-        <div className="w-full h-full bg-gradient-to-r from-[#fefeff] via-[#fefeff]/60 to-transparent blur-xl" />
+    <div className="w-full mx-auto relative overflow-hidden py-4 rounded-[50px]">
+      <div className="pointer-events-none absolute top-0 left-0 h-full w-12 z-10">
+        <div className=" relative w-full h-full overflow-hidden">
+          <div className="absolute inset-0 backdrop-blur-md bg-white/10 [mask-image:linear-gradient(to_right,black,transparent)]" />
+        </div>
       </div>
 
-      {/* Right smooth blur */}
-      <div className="pointer-events-none absolute top-0 right-0 h-full w-40 z-10">
-        <div className="w-full h-full bg-gradient-to-l from-[#fefeff] via-[#fefeff]/60 to-transparent blur-xl" />
+      <div className="pointer-events-none absolute top-0 left-0 h-full w-12 z-10">
+        <div className="  relative w-full h-full overflow-hidden">
+          <div className="absolute inset-0 backdrop-blur-md bg-white/10 [mask-image:linear-gradient(to_right,black,transparent)]" />
+        </div>
       </div>
 
-      {/* Scrolling content */}
       <motion.div
-        className="flex gap-16 whitespace-nowrap"
+        className="flex gap-32 whitespace-nowrap"
         animate={{
           x: isAlternate ? ["-33.33%", "0%"] : ["0%", "-33.33%"],
         }}
@@ -46,7 +50,7 @@ function CustomScroller({ direction = "normal" }: CustomScrollerProps) {
       >
         {duplicatedSkills.map((skill, idx) => (
           <div key={`${skill.text}-${idx}`} className="flex-shrink-0">
-            <TextIconButton text={skill.text} path={skill.path} />
+            <TextIconButton path={skill.path} />
           </div>
         ))}
       </motion.div>

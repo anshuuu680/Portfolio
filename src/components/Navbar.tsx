@@ -10,7 +10,7 @@ const navs = [
 
 function Navbar() {
   return (
-    <nav className="w-full min-h-[10vh] fixed px-[5em] flex items-center justify-between font-heading z-50">
+    <nav className="w-full min-h-[10vh] fixed px-[2em] lg:px-[5em] flex items-center justify-between font-heading z-50">
       <div className="  w-[20vmin]  flex items-center justify-start">
         <div className="w-fit p-4 px-4 flex items-center justify-center bg-black rounded-[8px] text-primary h-full text-button cursor-pointer">
           <h1>Logo</h1>

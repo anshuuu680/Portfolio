@@ -1,21 +1,23 @@
 type LargeButtonProps = {
   text?: string;
-  bgColor?: string;
-  color?: string;
-  borderColor?: string;
+  bgColorClass?: string;
+  textColorClass?: string;
+  borderColorClass?: string;
+  imgSrc?: string;
 };
-
 function LargeButton({
-  text = "Button",
-  bgColor = "#fff",
-  color = "#000",
-  borderColor = "#000",
+  text = "",
+  bgColorClass = "bg-white",
+  textColorClass = "text-black",
+  borderColorClass = "border-black",
+  imgSrc,
 }: LargeButtonProps) {
   return (
     <div
-      style={{ background: bgColor, color: color, borderColor: borderColor }}
-      className="flex flex-col gap-2 border backdrop-blur-md rounded-[16px] p-1.25 px-3 font-skill"
+      className={`flex items-center gap-2 border rounded-[16px] py-1.5 px-3 font-skill backdrop-blur-md cursor-pointer transition-all duration-300 ease-in-out
+      ${bgColorClass} ${textColorClass} ${borderColorClass} hover:scale-105`}
     >
+      {imgSrc && <img src={imgSrc} alt="" className="w-5 h-5 object-contain" />}
       <h1>{text}</h1>
     </div>
   );

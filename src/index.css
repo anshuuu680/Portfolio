@@ -34,11 +34,15 @@ html {
 }
 
 @theme {
-  --color-primary: #fefeff;
+  --color-primary: #fffefd;
   --color-button-hover: #fe832b;
   --color-skill-heading: #211a14;
   --color-skill-bg: #f6f7f6;
-  --color-heading: #1f1f1f;
+  --color-heading: #1b140e;
+  --color-subheading: #f07a05;
+  --color-skill-heading-bg: #fae4d3;
+  --color-paragraph: #49423f;
+  --color-skill-heading-border: rgba(251, 163, 75, 0.08);
   --font-dmsans: "Dmsans-regular";
   --font-dmsans-light: "Dmsans-light";
   --font-dmsans-semiBold: "Dmsans-semiBold";
@@ -46,5 +50,9 @@ html {
   --text-nav: 0.875rem;
   --text-button: 0.9375rem;
   --text-skill: 1.25rem;
+  --text-paragraph-md: 1.125rem;
   --text-heading-lg: 4.125rem;
+  --text-subheading-lg: 3.25rem;
+  --text-projects-lg: 3rem;
+  --text-heading-md: 1rem;
 }
