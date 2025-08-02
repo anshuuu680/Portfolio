@@ -7,7 +7,7 @@ function Hero() {
   return (
     <div
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen  pt-42 gap-24 px-4 sm:px-8 relative overflow-hidden"
+      className="flex flex-col items-center justify-center min-h-screen  lg:pt-42 pt-32 lg:gap-24 gap-6 px-4 sm:px-8 relative overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -19,9 +19,14 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-heading text-4xl sm:text-5xl md:text-6xl font-bold font-inter leading-[2.5rem] sm:leading-[3.5rem] lg:leading-[4.5rem]"
+          className="text-heading text-4xl sm:text-5xl md:text-6xl leading-[2.5rem] sm:leading-[3.5rem] lg:leading-[4.5rem]"
         >
-          Building the web, one <br /> pixel at time.
+          <div className="w-fit xs:pl-6 sm:pl-0">
+            <Button text="Full Stack Developer" />
+          </div>
+          <span className="fonnt-inter font-bold">
+            Building the web, one <br /> pixel at time.
+          </span>
         </motion.h1>
 
         <motion.p

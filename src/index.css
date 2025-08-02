@@ -33,6 +33,11 @@ html {
   src: url("/fonts/font-1.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Signature";
+  src: url("/fonts/signature.ttf") format("truetype");
+}
+
 @theme {
   --color-primary: #fffefd;
   --color-button-hover: #fe832b;
@@ -42,10 +47,11 @@ html {
   --color-subheading: #f07a05;
   --color-skill-heading-bg: #fae4d3;
   --color-paragraph: #49423f;
-  --color-skill-heading-border: rgba(251, 163, 75, 0.08);
+  --color-skill-heading-border: rgba(11, 10, 9, 0.08);
   --font-dmsans: "Dmsans-regular";
   --font-dmsans-light: "Dmsans-light";
   --font-dmsans-semiBold: "Dmsans-semiBold";
+  --font-signature: "Signature";
   --font-inter: "Inter";
   --text-nav: 0.875rem;
   --text-button: 0.9375rem;
@@ -55,4 +61,7 @@ html {
   --text-subheading-lg: 3.25rem;
   --text-projects-lg: 3rem;
   --text-heading-md: 1rem;
+  --text-project-detail-lg: 1.25rem;
+  --text-signature: 2.5rem;
+  --text-projects-md: 1.75rem;
 }

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
 
@@ -23,39 +24,66 @@ const skills = [
 ];
 
 function Skills() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const getMotionProps = (index: number) => {
+    const baseDelay = 0.1 + index * 0.1;
+    const transition = {
+      duration: 0.8,
+      delay: baseDelay,
+      ease: "easeInOut" as const,
+    };
+
+    if (isMobile) {
+      return {
+        initial: { opacity: 0, x: -100, y: 0 },
+        whileInView: { opacity: 1, x: 0, y: 0 },
+        transition,
+      };
+    } else {
+      const yShift = index === 1 ? -40 : index === 2 ? 90 : 40;
+      return {
+        initial: { opacity: 0, x: 0, y: 120 },
+        whileInView: { opacity: 1, x: 0, y: yShift },
+        transition,
+      };
+    }
+  };
+
   return (
     <div
       id="skills"
-      className="min-h-screen w-full flex flex-col items-center lg:pt-[6em] gap-28"
+      className="min-h-screen pb-12 w-full flex flex-col items-center pt-[4em] lg:pt-[6em] gap-12 lg:gap-32"
     >
       <Button text="Behind the Code" />
-      <div className="w-full max-w-6xl grid gird-col-2 lg:flex lg:items-start lg:justify-center text-center gap-4 md:gap-6 py-8 px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 120 }}
-          whileInView={{ opacity: 1, y: 40 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-        >
-          <Card skill="Languages" tech={skills[0]} />
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 120 }}
-          whileInView={{ opacity: 1, y: -40 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        >
-          <Card skill="Development" tech={skills[1]} />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 120 }}
-          whileInView={{ opacity: 1, y: 90 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        >
-          <Card skill="Tools" tech={skills[2]} />
-        </motion.div>
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
+        {[0, 1, 2].map((index) => {
+          const { initial, whileInView, transition } = getMotionProps(index);
+          return (
+            <motion.div
+              key={index}
+              initial={initial}
+              whileInView={whileInView}
+              transition={transition}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <Card
+                skill={["Languages", "Development", "Tools"][index]}
+                tech={skills[index]}
+              />
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

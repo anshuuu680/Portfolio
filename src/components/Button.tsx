@@ -9,7 +9,7 @@ function Button({ text = "Click Me" }: ButtonProps) {
                  border border-black/10 
                  rounded-[20px] 
                  shadow-md 
-                 max-w-[60vw] sm:max-w-[30vw] md:max-w-[20vw] lg:max-w-[12vw]"
+                 max-w-[60vw]"
     >
       <div className="flex flex-col justify-start shrink-0">
         <p className="text-[#0b0a09] text-sm sm:text-base">{text}</p>
