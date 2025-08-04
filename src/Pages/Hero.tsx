@@ -60,7 +60,7 @@ function Hero() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, delay: 1 }}
-        className="absolute top-24 left-[45em] pointer-events-none"
+        className="hidden lg:block w-[24vmax] h-[24vmax] absolute bottom-[6em] right-[4em] pointer-events-none"
         src="/vector-1.png"
         alt=""
       />

@@ -22,7 +22,6 @@ const skills = [
     { text: "Postman", path: "/postman.svg" },
   ],
 ];
-
 function Skills() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -58,11 +57,10 @@ function Skills() {
       };
     }
   };
-
   return (
     <div
       id="skills"
-      className="min-h-screen pb-12 w-full flex flex-col items-center pt-[4em] lg:pt-[6em] gap-12 lg:gap-32"
+      className="min-h-[45vmax] pb-12 w-full flex flex-col items-center pt-[2em] gap-12 lg:gap-32"
     >
       <Button text="Behind the Code" />
 

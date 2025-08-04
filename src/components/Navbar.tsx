@@ -3,9 +3,9 @@ import { Link } from "react-scroll";
 
 const navs = [
   { name: "HOME", href: "home" },
+  { name: "ABOUT", href: "about" },
   { name: "SKILLS", href: "skills" },
   { name: "PORTFOLIO", href: "portfolio" },
-  { name: "ABOUT", href: "about" },
   { name: "CONTACT", href: "contact" },
 ];
 
@@ -19,7 +19,7 @@ function Navbar() {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // revert back after 2s
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy:", err);
     }

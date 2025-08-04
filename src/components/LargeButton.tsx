@@ -7,7 +7,7 @@ type LargeButtonProps = {
 };
 function LargeButton({
   text = "",
-  bgColorClass = "bg-white",
+  bgColorClass = "bg-transparent",
   textColorClass = "text-black",
   borderColorClass = "border-black",
   imgSrc,
