@@ -19,7 +19,7 @@ function ProjectContainer({ project }: ProjectProps) {
   return (
     <div className="min-h-[32vmax] border-2 w-full rounded-[20px] bg-white border-skill-heading-border shadow-xl overflow-hidden p-2">
       <video
-        className="w-full min-h-[24vmax] object-cover rounded-[20px]"
+        className="w-full min-h-[24vmax] object-contain rounded-[20px]"
         src={project.video || "/part-1.mp4"}
         autoPlay
         muted

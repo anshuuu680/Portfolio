@@ -11,7 +11,7 @@ type Project = {
   video: string;
   github?: string;
   tech: Tech[];
-  description?: string; // optional if you plan to extend with descriptions later
+  description?: string;
 };
 
 type ProjectsDescriptionProps = {
@@ -26,25 +26,29 @@ function ProjectsDescription({ project }: ProjectsDescriptionProps) {
           {project.name}
         </h1>
         <p className="text-paragraph lg:text-skill text-base sm:text-lg font-dmans font-light">
-          Closerrr is a social media platform designed to connect people with
-          similar interests. It allows users to share content, engage in
-          discussions, and build communities around shared passions.
+          {project.description}
         </p>
 
         <div className="flex items-center gap-2">
-          {project.github && (
+          {project.github ? (
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               <LargeButton
+                link={project.github}
                 text="Github"
                 imgSrc="/githubLink.svg"
                 textColorClass="text-[#394cdb]"
                 borderColorClass="border-blue-600"
               />
             </a>
+          ) : (
+            <div className="px-3 py-2.5 text-sm font-medium font-dmans rounded-[20px] bg-[var(--color-skill-heading-bg)] text-[var(--color-subheading)] border border-gray-300">
+              Freelance
+            </div>
           )}
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <LargeButton
+                link={project.link}
                 text="Demo"
                 imgSrc="/link.svg"
                 textColorClass="text-[#394cdb]"

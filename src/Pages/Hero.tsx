@@ -35,9 +35,11 @@ function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="text-center text-paragraph font-light font-dmsans-light text-base sm:text-lg max-w-2xl text-paragraph-md"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          magni ea, ducimus delectus doloremque id necessitatibus qui et quos
-          voluptatibus aperiam sequi. Suscipit, non.
+          Crafting digital experiences that blend creativity with clean code. I
+          design and build modern, responsive websites and interfaces that are
+          fast, functional, and visually compelling. From concept to deployment,
+          every project is driven by purpose, precision, and passion for great
+          design.
         </motion.p>
 
         <motion.div
@@ -47,12 +49,18 @@ function Hero() {
           className="flex justify-center items-center gap-6"
         >
           <LargeButton
-            text="Let's talk"
+            text="Github"
+            imgSrc="/github.svg"
+            link="https://github.com/anshuuu680"
+          />
+          <LargeButton
+            link="/resume/resume.pdf"
+            text="Download CV"
+            isDownload={true}
             textColorClass="text-white"
             borderColorClass="border-[#fe832b]"
             bgColorClass="bg-[linear-gradient(180deg,_rgb(251,163,75)_0%,_rgb(240,103,5)_100%)]"
           />
-          <LargeButton text="Github" imgSrc="/github.svg" />
         </motion.div>
       </motion.div>
 

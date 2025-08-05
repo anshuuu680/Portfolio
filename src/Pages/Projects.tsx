@@ -12,9 +12,11 @@ const projectsData = [
   {
     name: "Closerrr",
     link: "https://closerrr.com",
-    video: "",
+    video:
+      "https://ik.imagekit.io/anshuuuu680/Portfolio/Screen%20Recording%202025-08-05%20at%208.56.54%E2%80%AFPM_j8ebpo0aV.mov/ik-video.mp4?updatedAt=1754407755957",
     github: "",
-    description: "",
+    description:
+      "Closerrr is a visually engaging animated landing page built for the Closerrr social media platform. The landing experience uses smooth animations and bold visuals to introduce users to a modern platform focused on real connections, interactive content, and a vibrant social feed.",
     tech: [
       { text: "React", path: "react.svg" },
       { text: "Tailwind", path: "node.svg" },
@@ -26,15 +28,17 @@ const projectsData = [
   {
     name: "Spark Ed-Platform",
     link: "https://spark-p0qa.onrender.com/",
-    video: "",
+    video:
+      "https://ik.imagekit.io/anshuuuu680/Portfolio/Screen%20Recording%202025-08-05%20at%209.12.17%E2%80%AFPM_M6iDDfngxW.mov/ik-video.mp4?updatedAt=1754408645827",
     github: "https://github.com/anshuuu680/Spark-Ed-Tech.git",
-    description: "",
+    description:
+      "Spark is a full-stack EdTech platform where users can purchase courses, instructors can upload and manage their content, and learners can track progress through personal tasks. It also features a social feed similar to Instagram, allowing users to post updates and engage with the learning community.",
     tech: [
       { text: "React", path: "react.svg" },
       { text: "Tailwind", path: "node.svg" },
       { text: "Node", path: "node.svg" },
       { text: "JWT", path: "framer.svg" },
-      { text: "Payment Gateway", path: "payment.svg" },
+      { text: "Gateway", path: "payment.svg" },
     ],
   },
 ];
