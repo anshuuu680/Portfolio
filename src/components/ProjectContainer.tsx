@@ -25,8 +25,8 @@ function ProjectContainer({ project }: ProjectProps) {
         muted
         loop
       ></video>
-      <div className="p-4 w-[80%]">
-        <div className="grid gap-1 mt-2 w-full grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+      <div className="p-4 w-full">
+        <div className="grid gap-2 mt-2 w-full grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
           {project.tech.map((obj, index) => (
             <TextIcon key={index} text={obj.text} icon={obj.path} />
           ))}
