@@ -97,10 +97,23 @@ function About() {
     },
   };
 
+  const socialLinks = [
+    {
+      href: "https://www.instagram.com/anshuuuu____",
+      path: "instagram-colored.svg",
+    },
+    { href: "https://wa.me/919131086950", path: "whatsapp.svg" },
+    {
+      href: "https://www.linkedin.com/in/anshu-patidar-478652228/",
+      path: "linkedin.svg",
+    },
+    { href: "https://leetcode.com/u/anshuuuu____/", path: "leetcode.svg" },
+  ];
+
   return (
     <motion.div
       id="about"
-      className="min-h-screen pb-12 w-full flex flex-col items-center pt-[4em] lg:pt-[6em] gap-8 lg:gap-16 px-4 lg:px-8"
+      className="md:min-h-screen md:pb-12 w-full flex flex-col items-center pt-[4em] lg:pt-[6em] gap-2 lg:gap-16 px-4 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -110,14 +123,14 @@ function About() {
         <Button text="Know About Me" />
       </motion.div>
 
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-8 ">
+      <div className="w-full max-w-7xl flex flex-col-reverse lg:flex-row justify-center items-center gap-12 lg:gap-8 ">
         <motion.div
-          className="w-full lg:w-[40%] min-h-[400px] lg:min-h-[500px] flex flex-col justify-between p-6 lg:px-8 py-8 lg:py-12 rounded-[30px]  relative overflow-hidden "
+          className="w-full px-4 lg:w-[40%] lg:justify-center min-h-[400px] lg:min-h-[500px] flex flex-col  gap-4 lg:px-8 rounded-[30px] relative overflow-hidden"
           variants={leftCardVariants}
           style={{ transformStyle: "preserve-3d" }}
         >
           <motion.div
-            className="absolute top-0 right-0 w-32 h-32 rounded-full -translate-y-16 translate-x-16"
+            className="absolute top-0 right-0 w-32  rounded-full -translate-y-16 translate-x-16"
             animate={{
               scale: [1, 1.3, 0.9, 1.2, 1],
               rotate: [0, 120, 240, 360],
@@ -151,7 +164,7 @@ function About() {
             variants={textVariants}
           >
             <motion.h1
-              className="font-dmans font-bold text-3xl lg:text-4xl xl:text-5xl text-heading leading-tight lg:leading-[3.5rem] tracking-normal"
+              className="font-dmans font-bold text-3xl lg:text-4xl text-heading leading-tight lg:leading-[2.75rem] tracking-normal"
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
@@ -163,7 +176,7 @@ function About() {
             >
               Hey, I'm Anshu, A <br className="hidden sm:block" />
               <motion.span
-                className="block sm:inline"
+                className="block sm:inline text-subheading"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -178,7 +191,7 @@ function About() {
             </motion.h1>
 
             <motion.p
-              className="text-paragraph text-base lg:text-lg leading-relaxed max-w-md"
+              className="text-paragraph text-md lg:text-[1rem] leading-relaxed max-w-md"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -196,71 +209,28 @@ function About() {
           </motion.div>
 
           <motion.div
-            className="w-full flex flex-col justify-center gap-2 mt-16 relative"
+            className="w-full flex flex-col justify-center  gap-2 mt-2 relative"
             variants={buttonVariants}
           >
             <div className="flex">
-              <a
-                href="https://www.instagram.com/anshuuuu____"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.div
-                  className="scale-75 cursor-pointer p-3 shadow-lg rounded-full hover:scale-110 transition-all ease-in-out duration-500"
-                  initial={{ opacity: 0, scale: 0.5, rotate: -25 }}
-                  whileInView={{ opacity: 1, scale: 0.75, rotate: 0 }}
-                  transition={{ duration: 0.2, delay: 0.3 }}
-                  viewport={{ once: true }}
+              {socialLinks.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Icon path="instagram-colored.svg" />
-                </motion.div>
-              </a>
-              <a
-                href="https://wa.me/919131086950
-"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.div
-                  className="scale-75 cursor-pointer p-3 shadow-lg rounded-full hover:scale-110 transition-all ease-in-out duration-500"
-                  initial={{ opacity: 0, scale: 0.5, rotate: -25 }}
-                  whileInView={{ opacity: 1, scale: 0.75, rotate: 0 }}
-                  transition={{ duration: 0.2, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <Icon path="whatsapp.svg" />
-                </motion.div>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/anshu-patidar-478652228/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.div
-                  className="scale-75 cursor-pointer p-3 shadow-lg rounded-full hover:scale-110 transition-all ease-in-out duration-500"
-                  initial={{ opacity: 0, scale: 0.5, rotate: -25 }}
-                  whileInView={{ opacity: 1, scale: 0.75, rotate: 0 }}
-                  transition={{ duration: 0.2, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <Icon path="linkedin.svg" />
-                </motion.div>
-              </a>
-              <a
-                href="https://leetcode.com/u/anshuuuu____/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.div
-                  className="scale-75 cursor-pointer p-3 shadow-lg rounded-full hover:scale-110 transition-all ease-in-out duration-500"
-                  initial={{ opacity: 0, scale: 0.5, rotate: -25 }}
-                  whileInView={{ opacity: 1, scale: 0.75, rotate: 0 }}
-                  transition={{ duration: 0.2, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <Icon path="leetcode.svg" />
-                </motion.div>
-              </a>
+                  <motion.div
+                    className="scale-75 cursor-pointer p-3 shadow-lg rounded-full hover:scale-110 transition-all ease-in-out duration-500"
+                    initial={{ opacity: 0, scale: 0.5, rotate: -25 }}
+                    whileInView={{ opacity: 1, scale: 0.75, rotate: 0 }}
+                    transition={{ duration: 0.2, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <Icon path={link.path} />
+                  </motion.div>
+                </a>
+              ))}
             </div>
 
             <motion.div
@@ -278,23 +248,18 @@ function About() {
         </motion.div>
 
         <motion.div
-          className="w-full lg:w-[45%] xl:w-[40%] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[45vmax] max-h-[700px] rounded-[30px] overflow-hidden relative"
+          className="w-full lg:w-[40%] xl:w-[40%] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[45vmax] max-h-[700px] rounded-[30px] overflow-hidden relative"
           variants={rightCardVariants}
-          whileHover={{
-            scale: 1.03,
-            rotateY: -2,
-            transition: { duration: 0.2, ease: "easeOut" },
-          }}
           style={{ transformStyle: "preserve-3d" }}
         >
           <motion.img
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             src="/dp.png"
             alt="Anshu - Software Engineer"
             loading="lazy"
             variants={imageVariants}
             whileHover={{
-              scale: 1.15,
+              scale: 1.1,
               transition: {
                 duration: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94] as const,

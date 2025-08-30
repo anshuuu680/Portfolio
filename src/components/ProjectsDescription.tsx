@@ -20,7 +20,7 @@ type ProjectsDescriptionProps = {
 
 function ProjectsDescription({ project }: ProjectsDescriptionProps) {
   return (
-    <div className="h-full w-full flex flex-col justify-center gap-4 lg:py-8">
+    <div className="h-full w-full flex flex-col justify-center gap-4 lg:py-8 shadow-md p-6 lg:p-6 bg-white/5 rounded-[20px]">
       <div className="flex flex-col gap-2 lg:gap-6">
         <h1 className="text-projects-md lg:text-projects-lg font-inter lg:leading-[3rem] lg:font-medium text-heading font-bold">
           {project.name}
@@ -31,30 +31,29 @@ function ProjectsDescription({ project }: ProjectsDescriptionProps) {
 
         <div className="flex items-center gap-2">
           {project.github ? (
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-              <LargeButton
-                link={project.github}
-                text="Github"
-                imgSrc="/githubLink.svg"
-                textColorClass="text-[#394cdb]"
-                borderColorClass="border-blue-600"
-              />
-            </a>
+            <LargeButton
+              link={project.github}
+              text="Github"
+              imgSrc="/githubLink.svg"
+              textColorClass="text-[#394cdb]"
+              borderColorClass="border-blue-600"
+            />
           ) : (
-            <div className="px-3 py-2.5 text-sm font-medium font-dmans rounded-[20px] bg-[var(--color-skill-heading-bg)] text-[var(--color-subheading)] border border-gray-300">
-              Freelance
-            </div>
+            <LargeButton
+              text="Freelance"
+              textColorClass="text-subheading"
+              bgColorClass="bg-skill-heading-bg"
+              borderColorClass="border-skill-heading-border"
+            />
           )}
           {project.link && (
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <LargeButton
-                link={project.link}
-                text="Demo"
-                imgSrc="/link.svg"
-                textColorClass="text-[#394cdb]"
-                borderColorClass="border-blue-600"
-              />
-            </a>
+            <LargeButton
+              link={project.link}
+              text="Demo"
+              imgSrc="/link.svg"
+              textColorClass="text-[#394cdb]"
+              borderColorClass="border-blue-600"
+            />
           )}
         </div>
       </div>

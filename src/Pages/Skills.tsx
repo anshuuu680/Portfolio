@@ -22,6 +22,7 @@ const skills = [
     { text: "Postman", path: "/postman.svg" },
   ],
 ];
+
 function Skills() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -35,7 +36,7 @@ function Skills() {
   }, []);
 
   const getMotionProps = (index: number) => {
-    const baseDelay = 0.1 + index * 0.1;
+    const baseDelay = 0.1 + index * 0.15;
     const transition = {
       duration: 0.8,
       delay: baseDelay,
@@ -44,44 +45,48 @@ function Skills() {
 
     if (isMobile) {
       return {
-        initial: { opacity: 0, x: -100, y: 0 },
-        whileInView: { opacity: 1, x: 0, y: 0 },
+        initial: { opacity: 0, x: -60 },
+        whileInView: { opacity: 1, x: 0 },
         transition,
       };
     } else {
-      const yShift = index === 1 ? -40 : index === 2 ? 90 : 40;
+      const yShift = index === 1 ? -30 : index === 2 ? 60 : 30;
       return {
-        initial: { opacity: 0, x: 0, y: 120 },
-        whileInView: { opacity: 1, x: 0, y: yShift },
+        initial: { opacity: 0, y: 80 },
+        whileInView: { opacity: 1, y: yShift },
         transition,
       };
     }
   };
+
   return (
     <div
       id="skills"
-      className="min-h-[45vmax] pb-12 w-full flex flex-col items-center pt-[2em] gap-12 lg:gap-32"
+      className="w-full flex flex-col items-center  md:pb-16 pb-[9em]  lg:pb-28 md:gap-10 lg:gap-[8em]"
     >
       <Button text="Behind the Code" />
 
-      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
-        {[0, 1, 2].map((index) => {
-          const { initial, whileInView, transition } = getMotionProps(index);
-          return (
-            <motion.div
-              key={index}
-              initial={initial}
-              whileInView={whileInView}
-              transition={transition}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <Card
-                skill={["Languages", "Development", "Tools"][index]}
-                tech={skills[index]}
-              />
-            </motion.div>
-          );
-        })}
+      <div className="w-full  flex justify-center">
+        <div className="max-w-6xl   mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-6  lg:px-10 justify-items-center">
+          {[0, 1, 2].map((index) => {
+            const { initial, whileInView, transition } = getMotionProps(index);
+            return (
+              <motion.div
+                key={index}
+                initial={initial}
+                whileInView={whileInView}
+                transition={transition}
+                viewport={{ once: true, amount: 0.3 }}
+                className="w-full max-w-[20rem]"
+              >
+                <Card
+                  skill={["Languages", "Development", "Tools"][index]}
+                  tech={skills[index]}
+                />
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

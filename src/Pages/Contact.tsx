@@ -53,7 +53,7 @@ function Contact() {
 
           <div className="w-full md:w-1/2 p-8 rounded-2xl shadow-lg border border-gray-200">
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
-              <h2 className="text-project-detail-lg font-semibold text-gray-800">
+              <h2 className="text-skill font-semibold text-gray-800">
                 Send a Message
               </h2>
 
@@ -70,7 +70,7 @@ function Contact() {
                   name="name"
                   required
                   placeholder="i.g. John Smith"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border text-sm border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -87,7 +87,7 @@ function Contact() {
                   name="email"
                   required
                   placeholder="e.g. john@example.com"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full text-sm border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -104,13 +104,13 @@ function Contact() {
                   required
                   rows={5}
                   placeholder="Write your message here..."
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                  className="w-full text-sm border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-heading hover:bg-gray-800 text-white py-2 px-4 rounded-lg transition duration-200 cursor-pointer"
+                className="w-full bg-heading hover:bg-gray-800 text-white py-2 px-4 rounded-lg transition duration-200 text-skill cursor-pointer"
               >
                 Send Message
               </button>
