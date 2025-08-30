@@ -3,7 +3,7 @@ type ButtonProps = {
   opacity?: number;
 };
 
-function Icon({ path, opacity = 30 }: ButtonProps) {
+function Icon({ path }: ButtonProps) {
   return (
     <div className="">
       {path && (
